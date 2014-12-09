@@ -1,7 +1,7 @@
 {
   "name": "4screens-common",
   "description": "Angular 4screens common scripts",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "test": "karma start"
   },
