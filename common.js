@@ -9,6 +9,21 @@ angular.module( '4screens.common', [] );
 
 'use strict';
 
+angular.module('4screens.common').factory( 'CommonLocalStorageService',
+  ["localStorageService", function( localStorageService ) {
+    return {
+      get: function( key ) {
+        return localStorageService.get( key );
+      },
+      set: function( key, value ) {
+        localStorageService.set( key, value );
+      }
+    };
+  }]
+);
+
+'use strict';
+
 angular.module('4screens.common').factory( 'CommonSocketService',
   ["$rootScope", "CONFIG", function( $rootScope, CONFIG ) {
     return {
