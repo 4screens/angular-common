@@ -28,7 +28,7 @@ angular.module('4screens.common').factory( 'CommonSocketService',
   ["$rootScope", "CONFIG", function( $rootScope, CONFIG ) {
     return {
       get: function( namespace ) {
-        var socket = io.connect(CONFIG.backend.domain + namespace);
+        var socket = io.connect((CONFIG.backend.socket || CONFIG.backend.domain) + namespace);
 
         return {
           on: function( eventName, callback ) {
