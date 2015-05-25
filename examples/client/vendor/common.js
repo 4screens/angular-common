@@ -11,29 +11,29 @@ angular.module( '4screens.common', [] );
 
 angular.module('4screens.common').provider( 'CommonLocalStorageService', function() {
     var mock = false;
+    var mockedStore = {};
 
     this.mock = function() {
       mock = true;
     };
 
-    this.$get = ["localStorageService", function( localStorageService ) {
-      var mockedStore = {};
+    this.$get = ["localStorageService", function(localStorageService) {
       return {
-        get: function( key ) {
+        get: function(key) {
           if (mock) {
             return mockedStore[key];
           }
-          return localStorageService.get( key );
+          return localStorageService.get(key);
         },
-        set: function( key, value ) {
+        set: function(key, value) {
           if (mock) {
             mockedStore[key] = value;
           } else {
-            localStorageService.set( key, value );
+            localStorageService.set(key, value);
           }
         }
       };
-    }];
+    }]
   }
 );
 
