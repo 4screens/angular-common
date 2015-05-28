@@ -22,6 +22,9 @@ angular.module('4screens.common').provider( 'CommonLocalStorageService', functio
           } else {
             localStorageService.set( key, value );
           }
+        },
+        clearAll: function( regex ) {
+          return localStorageService.clearAll( regex );
         }
       };
     };

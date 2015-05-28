@@ -1,5 +1,5 @@
 /*
- 4screens-common v0.1.2
+ 4screens-common v0.1.4
  (c) 2014 Nopattern sp. z o.o.
  License: proprietary
 */
@@ -31,6 +31,9 @@ angular.module('4screens.common').provider( 'CommonLocalStorageService', functio
           } else {
             localStorageService.set( key, value );
           }
+        },
+        clearAll: function( regex ) {
+          return localStorageService.clearAll( regex );
         }
       };
     }];
