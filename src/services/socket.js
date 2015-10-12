@@ -26,6 +26,14 @@ angular.module('4screens.common').factory( 'CommonSocketService',
                 }
               });
             });
+          },
+          disconnect: function( callback ) {
+            socket.disconnect();
+            $rootScope.$apply(function () {
+              if( callback ) {
+                callback.apply( socket );
+              }
+            });
           }
         };
       }
