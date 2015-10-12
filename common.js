@@ -1,5 +1,5 @@
 /*
- 4screens-common v0.1.4
+ 4screens-common v0.1.6
  (c) 2014 Nopattern sp. z o.o.
  License: proprietary
 */
@@ -67,6 +67,14 @@ angular.module('4screens.common').factory( 'CommonSocketService',
                   callback.apply( socket, args );
                 }
               });
+            });
+          },
+          disconnect: function( callback ) {
+            socket.disconnect();
+            $rootScope.$apply(function () {
+              if( callback ) {
+                callback.apply( socket );
+              }
             });
           }
         };
